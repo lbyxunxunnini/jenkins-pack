@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>method</key>
+        <string>release-testing</string>
+        <key>teamID</key>
+        <string>GPXZK88F73</string>
+        <key>provisioningProfiles</key>
+        <dict>
+            <key>tech.ycyx.alpha.yinchao</key>
+            <string>yinchaoapp_alpha_adhoc</string>
+        </dict>
+        <key>signingCertificate</key>
+        <string>iPhone Distribution</string>
+        <key>signingStyle</key>
+        <string>manual</string>
+    </dict>
+</plist>
