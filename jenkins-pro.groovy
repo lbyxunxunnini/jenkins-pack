@@ -187,6 +187,25 @@ pipeline {
                 }
             }
         }
+        
+        stage('修改 MainActivity launchMode') {
+            when { expression { return env.BUILD_ANDROID == "true" && env.UM_LOG == "true" } }
+            steps {
+                dir('facesong_flutter') {
+                    echo "✏️ 修改 MainActivity 的 launchMode 为 standard"
+                    sh '''
+                        awk '
+                            /android:name=".MainActivity"/ { inActivity=1 }
+                            inActivity && /android:launchMode=/ {
+                                sub(/android:launchMode="singleInstance"/, "android:launchMode=\\"standard\\"")
+                            }
+                            inActivity && /<\/activity>/ { inActivity=0 }
+                            { print }
+                        ' android/app/src/main/AndroidManifest.xml > AndroidManifest.tmp && mv AndroidManifest.tmp android/app/src/main/AndroidManifest.xml
+                    '''
+                }
+            }
+        }
 
         stage('构建 Android APK') {
             when { expression { return env.BUILD_ANDROID == "true" } }
