@@ -199,7 +199,7 @@ pipeline {
                             inActivity && /android:launchMode=/ {
                                 sub(/android:launchMode="singleInstance"/, "android:launchMode=\\"standard\\"")
                             }
-                            inActivity && /<\/activity>/ { inActivity=0 }
+                            inActivity && /<\\/activity>/ { inActivity=0 }
                             { print }
                         ' android/app/src/main/AndroidManifest.xml > AndroidManifest.tmp && mv AndroidManifest.tmp android/app/src/main/AndroidManifest.xml
                     '''
