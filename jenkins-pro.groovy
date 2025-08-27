@@ -106,6 +106,7 @@ pipeline {
                             --dart-define-from-file="$DART_DEFINE_FILE" \
                             --dart-define=WATERMARK=true \
                             --dart-define=DEV_CONFIG=true \
+                            --dart-define=DISTRIBUTE_CHANNEL=debug \
                             --export-options-plist="$EXPORT_OPTIONS" \
                             --build-name="$BUILD_NAME" \
                             --build-number="$BUILD_NUMBER"
@@ -221,6 +222,7 @@ pipeline {
                             --dart-define-from-file="$DART_DEFINE_FILE" \
                             --dart-define=WATERMARK=true \
                             --dart-define=DEV_CONFIG=true \
+                            --dart-define=DISTRIBUTE_CHANNEL=debug \
                             --build-name="$BUILD_NAME" \
                             --build-number="$BUILD_NUMBER"
                     '''
